@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {SearchMovieService} from '../../services/search-movie.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  movieToSearch: FormControl;
+
+  constructor(private searchMovieService: SearchMovieService) { }
 
   ngOnInit(): void {
+    this.movieToSearch = new FormControl('movieToSearch');
   }
 
+  search(): void{
+    console.log(this.movieToSearch);
+    this.searchMovieService.searchMovie(this.movieToSearch.value);
+  }
 }
