@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   constructor(private searchMovieService: SearchMovieService) { }
 
   ngOnInit(): void {
-    this.movieToSearch = new FormControl('movieToSearch');
+    this.movieToSearch = new FormControl('');
   }
 
   search(): void{

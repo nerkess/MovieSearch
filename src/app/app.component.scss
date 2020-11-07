@@ -1,3 +1,14 @@
-.tmdb{
-    width: 100px;
+.mat-toolbar{
+  span {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+  }
+}
+
+.container{
+  width: 80%;
+  .searched-movies{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

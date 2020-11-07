@@ -1,1 +1,14 @@
-<app-search-bar></app-search-bar>
+<mat-toolbar color="primary">
+  <span>Movie Search von Nerkes</span>
+</mat-toolbar>
+<div class="container">
+  <app-search-bar></app-search-bar>
+
+  <div class="searched-movies">
+    <app-movie *ngFor="let searchedMovie of (searchMovieService.searchedMovies | async)?.results"
+               [movie]="searchedMovie">
+    </app-movie>
+  </div>
+</div>
+
+

@@ -2,7 +2,75 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'variables';
 // Plus imports for other components in your app.
+/* For use in src/lib/core/theming/_palette.scss */
+$mat-movie-search-primary: (
+  50 : #e8e3e8,
+  100 : #c5b9c6,
+  200 : #9e8ba1,
+  300 : #775c7b,
+  400 : #59395e,
+  500 : #3c1642,
+  600 : #36133c,
+  700 : #2e1033,
+  800 : #270c2b,
+  900 : #1a061d,
+  A100 : #e05cff,
+  A200 : #d629ff,
+  A400 : #c600f5,
+  A700 : #b200db,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-movie-search-accent: (
+  50 : #f5ffe8,
+  100 : #e7fec6,
+  200 : #d7fea0,
+  300 : #c7fd7a,
+  400 : #bbfc5e,
+  500 : #affc41,
+  600 : #a8fc3b,
+  700 : #9ffb32,
+  800 : #96fb2a,
+  900 : #86fa1c,
+  A100 : #ffffff,
+  A200 : #fdfffb,
+  A400 : #e0ffc8,
+  A700 : #d2ffae,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -12,8 +80,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$movie-search-primary: mat-palette($mat-indigo);
-$movie-search-accent: mat-palette($mat-pink, A200, A100, A400);
+$movie-search-primary: mat-palette($mat-movie-search-primary);
+$movie-search-accent: mat-palette($mat-movie-search-accent);
 
 // The warn palette is optional (defaults to red).
 $movie-search-warn: mat-palette($mat-red);
@@ -32,8 +100,24 @@ $movie-search-theme: mat-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($movie-search-theme);
-
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;}
+*{
+  font-family: 'Kanit', sans-serif;}
+body {
+  background-color: $dark-green;}
+footer{
+  width: 100%;
+  background-color: $light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  p{
+    font-family: 'Amatic SC', cursive;
+  }
+}
