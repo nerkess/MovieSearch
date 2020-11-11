@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {SearchMovieService} from './services/search-movie.service';
+import {Observable} from 'rxjs';
+import {SearchMovies, TmdbService} from 'tmdb-service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,13 @@ import {SearchMovieService} from './services/search-movie.service';
 export class AppComponent {
   title = 'movie-search';
 
-  constructor(public searchMovieService: SearchMovieService) {
+  searchedMovies: Observable<SearchMovies>;
+
+  constructor(private tmdbService: TmdbService) {
+  }
+
+  search(value: string): void {
+    this.searchedMovies = this.tmdbService.searchMovie(value);
   }
 
 }

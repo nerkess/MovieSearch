@@ -133,6 +133,46 @@
           }
         }
       }
+    },
+    "tmdb-service": {
+      "projectType": "library",
+      "root": "projects/tmdb-service",
+      "sourceRoot": "projects/tmdb-service/src",
+      "prefix": "tmdb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/tmdb-service/tsconfig.lib.json",
+            "project": "projects/tmdb-service/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tmdb-service/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tmdb-service/src/test.ts",
+            "tsConfig": "projects/tmdb-service/tsconfig.spec.json",
+            "karmaConfig": "projects/tmdb-service/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tmdb-service/tsconfig.lib.json",
+              "projects/tmdb-service/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "movie-search",
