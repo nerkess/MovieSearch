@@ -1,6 +1,6 @@
 <mat-form-field appearance="outline">
     <mat-label>Find a movie...</mat-label>
-    <input matInput (keypress)="search()" [formControl]="movieToSearch">
+    <input matInput [formControl]="movieToSearch">
     <button mat-icon-button matSuffix color="primary" (click)="search()">
       <mat-icon>search</mat-icon>
     </button>

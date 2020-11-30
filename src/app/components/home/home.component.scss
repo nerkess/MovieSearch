@@ -1,0 +1,20 @@
+.mat-toolbar{
+  span {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  app-search-bar{
+    margin: 1rem;
+  }
+}
+
+.container{
+  .searched-movies{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+}

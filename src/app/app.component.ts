@@ -1,22 +1,16 @@
-import {Component} from '@angular/core';
-import {Observable} from 'rxjs';
-import {SearchMovies, TmdbService} from 'tmdb-service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'movie-search';
 
-  searchedMovies: Observable<SearchMovies>;
-
-  constructor(private tmdbService: TmdbService) {
+  constructor() {
   }
 
-  search(value: string): void {
-    this.searchedMovies = this.tmdbService.searchMovie(value);
+  ngOnInit(): void {
   }
-
 }

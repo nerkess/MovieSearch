@@ -9,25 +9,28 @@ import {MovieModule} from './components/movie/movie.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {CommonModule} from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ApiKeyInterceptorService} from 'tmdb-service';
+import {ApiKeyInterceptorService, AuthModule} from 'tmdb-service';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatGridListModule,
+    imports: [
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatGridListModule,
 
-    SearchBarModule,
-    MovieModule,
-  ],
+        SearchBarModule,
+        MovieModule,
+        AuthModule,
+    ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptorService, multi: true}
   ],
